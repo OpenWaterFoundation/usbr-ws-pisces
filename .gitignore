@@ -1,0 +1,13 @@
+# Ignore files in the repository
+# - may need to add more later but many of the files are saved in the workspace, which is not saved to Git
+
+# Class files in the web application target
+
+*.class
+
+# vi editor files
+*.swp
+*.swo
+
+# Ignore Microsoft Office temporary files
+~$*

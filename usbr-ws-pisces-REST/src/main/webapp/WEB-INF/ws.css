@@ -1,0 +1,30 @@
+/*
+Styles for Reclamation web services HTML pages
+- Put html defaults at top
+- Override with additional styles below
+*/
+html *
+{
+	font-family:  "Arial", Helvetica, sans-serif;
+}
+code {
+	font-family:  "Courier New", Courier, monospace;
+}
+h1 {
+	font-family:  "Tahoma", Geneva, sans-serif;
+}
+h2 {
+	font-family:  "Tahoma", Geneva, sans-serif;
+}
+p {
+	font-family:  "Arial", Helvetica, sans-serif;
+}
+table {
+	border-collapse: collapse;
+}
+table, th, td {
+	border: 1px solid black;
+}
+ul {
+	list-style-type: "square";
+}

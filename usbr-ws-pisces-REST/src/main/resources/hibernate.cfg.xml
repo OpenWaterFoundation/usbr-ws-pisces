@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <!--
+  hibernate.connection.driver_class - Java JDBC driver for mySQL connector J
+  hibernate.connection.url - database connection URL for Pisces database
+  hibernate.connection.username - username for database connection - plain text OK since read-only
+  hibernate.connection.password - password for database connection - plain text OK since read-only
+  hibernate.dialect - tells Hibernate that database is mySQL
+  show_sql - will log SQL statements to console - use true for development, false for production
+  
+  hibernate.c3p0.min_size - minimum number of connections in pool
+  hibernate.c3p0.max_size - maximum number of connections in pool
+  hibernate.c3p0.timeout - seconds a connection can remain pooled but unused before being discarded
+  hibernate.c3p0.max_statements - size of PreparedStatement cache
+  hibernate.c3p0.idle_test_period - seconds between tests of idle, pooled but unchecked-out connections
+  -->
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/timeseries</property>
+  <property name="hibernate.connection.username">app_user</property>
+  <property name="hibernate.connection.password">guest</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <property name="show_sql">true</property>
+  
+  <property name="hibernate.c3p0.min_size">5</property>
+  <property name="hibernate.c3p0.max_size">20</property>
+  <property name="hibernate.c3p0.timeout">300</property>
+  <property name="hibernate.c3p0.max_statements">50</property>
+  <property name="hibernate.c3p0.idle_test_period">3000</property>
+  
+  <mapping class="gov.usbr.ws.pisces.Parameter"/>
+  <mapping class="gov.usbr.ws.pisces.Site"/>
+  <mapping class="gov.usbr.ws.pisces.SiteType"/>
+  <mapping class="gov.usbr.ws.pisces.TSData"/>
+  <mapping class="gov.usbr.ws.pisces.TSMeta"/>
+ </session-factory>
+</hibernate-configuration>
